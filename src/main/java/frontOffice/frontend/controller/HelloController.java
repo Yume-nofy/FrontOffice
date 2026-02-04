@@ -9,7 +9,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(Model model) {
-        String message = "Hello World depuis le controller";
+        String message = "Hello World !";
         model.addAttribute("message", message);
         return "hello"; // résout vers /WEB-INF/jsp/hello.jsp
     }
