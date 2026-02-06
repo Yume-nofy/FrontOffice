@@ -1,0 +1,12 @@
+#!/bin/bash
+APP="frontend-0.0.1-SNAPSHOT.jar"
+
+echo "🚀 Déploiement de $APP..."
+
+mvn clean package -DskipTests || { echo "❌ Erreur de build"; exit 1; }
+
+pkill -f "$APP" 2>/dev/null
+
+nohup java -jar target/$APP > app.log 2>&1 &
+
+echo "✅ $APP lancé avec succès !"

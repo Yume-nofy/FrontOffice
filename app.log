@@ -1,0 +1,22 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.13)
+
+2026-02-06 14:33:22.944  INFO 115791 --- [           main] f.frontend.FrontendApplication           : Starting FrontendApplication v0.0.1-SNAPSHOT using Java 17.0.9 on zed-Latitude-E7440 with PID 115791 (/home/zed/Documents/S5/clusteringMr_Naina/FrontOffice/target/frontend-0.0.1-SNAPSHOT.jar started by zed in /home/zed/Documents/S5/clusteringMr_Naina/FrontOffice)
+2026-02-06 14:33:22.949  INFO 115791 --- [           main] f.frontend.FrontendApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-06 14:33:24.888  INFO 115791 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-06 14:33:24.912  INFO 115791 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-06 14:33:24.913  INFO 115791 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-06 14:33:25.358  INFO 115791 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-02-06 14:33:25.484  INFO 115791 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-06 14:33:25.484  INFO 115791 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2402 ms
+2026-02-06 14:33:26.606  INFO 115791 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-06 14:33:26.661  INFO 115791 --- [           main] f.frontend.FrontendApplication           : Started FrontendApplication in 5.065 seconds (JVM running for 5.8)
+2026-02-06 14:33:27.190  INFO 115791 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 14:33:27.192  INFO 115791 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-06 14:33:27.197  INFO 115791 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
