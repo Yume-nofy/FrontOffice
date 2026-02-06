@@ -16,7 +16,7 @@
     <groupId>frontOffice</groupId>
     <artifactId>frontend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <!-- packaging JAR par défaut -->
+    <packaging>war</packaging>
 
     <name>frontend</name>
     <description>Demo project for Spring Boot</description>
@@ -31,6 +31,12 @@
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
 </dependency>
+
+        <!-- JSTL pour les tags JSP -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
 
         <!-- Spring Web (Tomcat embarqué) -->
         <dependency>
