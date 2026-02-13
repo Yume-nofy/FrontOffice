@@ -1,24 +1,16 @@
-package frontOffice.frontend.model;
+package frontOffice.frontend.dto;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
-public class Reservation {
+public class ReservationDTO {
     private int id;
     private String idclient;
-    private int idhotel;
     private String nomHotel;
     private int nbPassager;
-    private LocalDate dateArrivee;
-    private LocalTime heureArrivee;
+    private String dateArrivee;
+    private String heureArrivee;
 
-    public Reservation() {
-    }
-
-    public Reservation(int id, String idclient, int idhotel, String nomHotel, int nbPassager, LocalDate dateArrivee, LocalTime heureArrivee) {
+    public ReservationDTO(int id, String idclient, String nomHotel, int nbPassager, String dateArrivee, String heureArrivee) {
         this.id = id;
         this.idclient = idclient;
-        this.idhotel = idhotel;
         this.nomHotel = nomHotel;
         this.nbPassager = nbPassager;
         this.dateArrivee = dateArrivee;
@@ -41,14 +33,6 @@ public class Reservation {
         this.idclient = idclient;
     }
 
-    public int getIdhotel() {
-        return idhotel;
-    }
-
-    public void setIdhotel(int idhotel) {
-        this.idhotel = idhotel;
-    }
-
     public String getNomHotel() {
         return nomHotel;
     }
@@ -65,32 +49,31 @@ public class Reservation {
         this.nbPassager = nbPassager;
     }
 
-    public LocalDate getDateArrivee() {
+    public String getDateArrivee() {
         return dateArrivee;
     }
 
-    public void setDateArrivee(LocalDate dateArrivee) {
+    public void setDateArrivee(String dateArrivee) {
         this.dateArrivee = dateArrivee;
     }
 
-    public LocalTime getHeureArrivee() {
+    public String getHeureArrivee() {
         return heureArrivee;
     }
 
-    public void setHeureArrivee(LocalTime heureArrivee) {
+    public void setHeureArrivee(String heureArrivee) {
         this.heureArrivee = heureArrivee;
     }
 
     @Override
     public String toString() {
-        return "Reservation{" +
+        return "ReservationDTO{" +
                 "id=" + id +
                 ", idclient='" + idclient + '\'' +
-                ", idhotel=" + idhotel +
                 ", nomHotel='" + nomHotel + '\'' +
                 ", nbPassager=" + nbPassager +
-                ", dateArrivee=" + dateArrivee +
-                ", heureArrivee=" + heureArrivee +
+                ", dateArrivee='" + dateArrivee + '\'' +
+                ", heureArrivee='" + heureArrivee + '\'' +
                 '}';
     }
 }

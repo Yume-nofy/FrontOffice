@@ -1,6 +1,7 @@
 package frontOffice.frontend.controller;
 
 import frontOffice.frontend.model.Reservation;
+import frontOffice.frontend.dto.ReservationDTO;
 import frontOffice.frontend.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -10,11 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDateTime;
 import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,34 +22,6 @@ public class ReservationController {
 
     @Autowired
     private ReservationService reservationService;
-
-    // Classe wrapper pour stocker les réservations avec dates en java.util.Date
-    public static class ReservationDTO {
-        private int id;
-        private String idclient;
-        private int idhotel;
-        private int nbPassager;
-        private Date dateArrivee;
-
-        public ReservationDTO(int id, String idclient, int idhotel, int nbPassager, Date dateArrivee) {
-            this.id = id;
-            this.idclient = idclient;
-            this.idhotel = idhotel;
-            this.nbPassager = nbPassager;
-            this.dateArrivee = dateArrivee;
-        }
-
-        public int getId() { return id; }
-        public String getIdclient() { return idclient; }
-        public int getIdhotel() { return idhotel; }
-        public int getNbPassager() { return nbPassager; }
-        public Date getDateArrivee() { return dateArrivee; }
-    }
-
-    // Convertir LocalDateTime en java.util.Date
-    private Date convertToDate(LocalDateTime localDateTime) {
-        return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
-    }
 
     @GetMapping("/reservations")
     public String listReservations(
@@ -65,19 +36,27 @@ public class ReservationController {
         // Appliquer le filtre par date si fourni
         if (dateFilter != null) {
             filteredReservations = reservations.stream()
-                    .filter(r -> r.getDateArrivee().toLocalDate().equals(dateFilter))
+                    .filter(r -> r.getDateArrivee() != null && r.getDateArrivee().equals(dateFilter))
                     .collect(Collectors.toList());
         }
 
-        // Convertir en DTO avec java.util.Date pour JSTL
+        // Formateurs pour date et heure
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+
+        // Convertir en DTO pour l'affichage
         List<ReservationDTO> reservationDTOs = new ArrayList<>();
         for (Reservation res : filteredReservations) {
+            String dateStr = res.getDateArrivee() != null ? res.getDateArrivee().format(dateFormatter) : "-";
+            String timeStr = res.getHeureArrivee() != null ? res.getHeureArrivee().format(timeFormatter) : "-";
+            
             reservationDTOs.add(new ReservationDTO(
                     res.getId(),
                     res.getIdclient(),
-                    res.getIdhotel(),
+                    res.getNomHotel(),
                     res.getNbPassager(),
-                    convertToDate(res.getDateArrivee())
+                    dateStr,
+                    timeStr
             ));
         }
 

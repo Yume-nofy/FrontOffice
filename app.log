@@ -7,81 +7,45 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.13)
 
-2026-02-06 16:32:57.050  INFO 255280 --- [           main] f.frontend.FrontendApplication           : Starting FrontendApplication v0.0.1-SNAPSHOT using Java 17.0.9 on zed-Latitude-E7440 with PID 255280 (/home/zed/Documents/S5/clusteringMr_Naina/FrontOffice/target/frontend-0.0.1-SNAPSHOT.war started by zed in /home/zed/Documents/S5/clusteringMr_Naina/FrontOffice)
-2026-02-06 16:32:57.055 DEBUG 255280 --- [           main] f.frontend.FrontendApplication           : Running with Spring Boot v2.7.13, Spring v5.3.28
-2026-02-06 16:32:57.056  INFO 255280 --- [           main] f.frontend.FrontendApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-02-06 16:32:59.148  INFO 255280 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
-2026-02-06 16:32:59.170  INFO 255280 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-06 16:32:59.171  INFO 255280 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
-2026-02-06 16:33:00.956  INFO 255280 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2026-02-06 16:33:01.411  INFO 255280 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-02-06 16:33:01.411  INFO 255280 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4178 ms
-2026-02-06 16:33:01.827 DEBUG 255280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-02-06 16:33:01.981 DEBUG 255280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 mappings in 'requestMappingHandlerMapping'
-2026-02-06 16:33:02.008 DEBUG 255280 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-02-06 16:33:02.020 DEBUG 255280 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-02-06 16:33:02.112  INFO 255280 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
-2026-02-06 16:33:02.128  INFO 255280 --- [           main] f.frontend.FrontendApplication           : Started FrontendApplication in 6.095 seconds (JVM running for 6.745)
-2026-02-06 16:33:02.824  INFO 255280 --- [nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-06 16:33:02.824  INFO 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-06 16:33:02.825 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-02-06 16:33:02.825 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-02-06 16:33:02.825 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2026-02-06 16:33:02.827 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@349347ee
-2026-02-06 16:33:02.827 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4e9e4b5e
-2026-02-06 16:33:02.828 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-02-06 16:33:02.828  INFO 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-02-06 16:33:02.843 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/reservations", parameters={}
-2026-02-06 16:33:02.856 DEBUG 255280 --- [nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to frontOffice.frontend.controller.ReservationController#listReservations(LocalDate, Model)
-2026-02-06 16:33:02.940 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8080/api/reservations
-2026-02-06 16:33:03.078 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2026-02-06 16:33:03.162 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
-2026-02-06 16:33:03.164 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : Reading to [frontOffice.frontend.service.ReservationService$ApiResponse]
-2026-02-06 16:33:03.201 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.view.JstlView            : View name 'reservations', model {reservations=[frontOffice.frontend.controller.ReservationController$ReservationDTO@631dfdaa], dateFilter=null}
-2026-02-06 16:33:03.208 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.view.JstlView            : Forwarding to [/WEB-INF/jsp/reservations.jsp]
-2026-02-06 16:33:05.018 DEBUG 255280 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-06 16:33:05.053 DEBUG 255280 --- [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
-2026-02-06 16:33:05.064 DEBUG 255280 --- [nio-8085-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-02-06 16:33:05.075 DEBUG 255280 --- [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-06 16:33:05.126 DEBUG 255280 --- [nio-8085-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
-2026-02-06 16:33:05.129 DEBUG 255280 --- [nio-8085-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-02-06 16:33:05.132 DEBUG 255280 --- [nio-8085-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2026-02-06 16:33:05.132 DEBUG 255280 --- [nio-8085-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2026-02-06 16:33:05.133 DEBUG 255280 --- [nio-8085-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2026-02-06 16:33:05.139 DEBUG 255280 --- [nio-8085-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2026-02-06 16:33:05.167 DEBUG 255280 --- [nio-8085-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
-2026-02-06 16:33:05.169 DEBUG 255280 --- [nio-8085-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Feb 06 16:33:05 EAT 2026, status=404, error=Not Found, message=No message available,  (truncated)...]
-2026-02-06 16:33:05.237 DEBUG 255280 --- [nio-8085-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2026-02-06 16:37:05.025 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/reservations?dateFilter=2026-02-06", parameters={masked}
-2026-02-06 16:37:05.027 DEBUG 255280 --- [nio-8085-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to frontOffice.frontend.controller.ReservationController#listReservations(LocalDate, Model)
-2026-02-06 16:37:05.034 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8080/api/reservations
-2026-02-06 16:37:05.035 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2026-02-06 16:37:05.072 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.client.RestTemplate              : Response 200 OK
-2026-02-06 16:37:05.073 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.client.RestTemplate              : Reading to [frontOffice.frontend.service.ReservationService$ApiResponse]
-2026-02-06 16:37:05.076 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.servlet.view.JstlView            : View name 'reservations', model {reservations=[frontOffice.frontend.controller.ReservationController$ReservationDTO@49579b43], dateFilter=2026-02-06}
-2026-02-06 16:37:05.077 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.servlet.view.JstlView            : Forwarding to [/WEB-INF/jsp/reservations.jsp]
-2026-02-06 16:37:05.080 DEBUG 255280 --- [nio-8085-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-06 16:37:05.108 DEBUG 255280 --- [nio-8085-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
-2026-02-06 16:37:05.110 DEBUG 255280 --- [nio-8085-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-02-06 16:37:05.113 DEBUG 255280 --- [nio-8085-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2026-02-06 16:37:18.157 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/reservations", parameters={}
-2026-02-06 16:37:18.158 DEBUG 255280 --- [nio-8085-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to frontOffice.frontend.controller.ReservationController#listReservations(LocalDate, Model)
-2026-02-06 16:37:18.160 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8080/api/reservations
-2026-02-06 16:37:18.160 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2026-02-06 16:37:18.195 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.client.RestTemplate              : Response 200 OK
-2026-02-06 16:37:18.196 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.client.RestTemplate              : Reading to [frontOffice.frontend.service.ReservationService$ApiResponse]
-2026-02-06 16:37:18.197 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.servlet.view.JstlView            : View name 'reservations', model {reservations=[frontOffice.frontend.controller.ReservationController$ReservationDTO@6f9b7df7], dateFilter=null}
-2026-02-06 16:37:18.198 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.servlet.view.JstlView            : Forwarding to [/WEB-INF/jsp/reservations.jsp]
-2026-02-06 16:37:18.200 DEBUG 255280 --- [nio-8085-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-06 16:37:40.528 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/reservations?dateFilter=2026-02-10", parameters={masked}
-2026-02-06 16:37:40.528 DEBUG 255280 --- [nio-8085-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to frontOffice.frontend.controller.ReservationController#listReservations(LocalDate, Model)
-2026-02-06 16:37:40.530 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8080/api/reservations
-2026-02-06 16:37:40.530 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2026-02-06 16:37:40.566 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.client.RestTemplate              : Response 200 OK
-2026-02-06 16:37:40.567 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.client.RestTemplate              : Reading to [frontOffice.frontend.service.ReservationService$ApiResponse]
-2026-02-06 16:37:40.568 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.servlet.view.JstlView            : View name 'reservations', model {reservations=[], dateFilter=2026-02-10}
-2026-02-06 16:37:40.568 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.servlet.view.JstlView            : Forwarding to [/WEB-INF/jsp/reservations.jsp]
-2026-02-06 16:37:40.569 DEBUG 255280 --- [nio-8085-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-06 16:37:40.586 DEBUG 255280 --- [io-8085-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
-2026-02-06 16:37:40.586 DEBUG 255280 --- [io-8085-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-02-06 16:37:40.588 DEBUG 255280 --- [io-8085-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-02-13 16:05:28.432  INFO 133296 --- [           main] f.frontend.FrontendApplication           : Starting FrontendApplication v0.0.1-SNAPSHOT using Java 17.0.9 on zed-Latitude-E7440 with PID 133296 (/home/zed/Documents/S5/clusteringMr_Naina/FrontOffice/target/frontend-0.0.1-SNAPSHOT.war started by zed in /home/zed/Documents/S5/clusteringMr_Naina/FrontOffice)
+2026-02-13 16:05:28.440 DEBUG 133296 --- [           main] f.frontend.FrontendApplication           : Running with Spring Boot v2.7.13, Spring v5.3.28
+2026-02-13 16:05:28.442  INFO 133296 --- [           main] f.frontend.FrontendApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-02-13 16:05:30.537  INFO 133296 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2026-02-13 16:05:30.548  INFO 133296 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-13 16:05:30.549  INFO 133296 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2026-02-13 16:05:32.280  INFO 133296 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-02-13 16:05:32.670  INFO 133296 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-13 16:05:32.670  INFO 133296 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4007 ms
+2026-02-13 16:05:32.977 DEBUG 133296 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-13 16:05:33.177 DEBUG 133296 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 mappings in 'requestMappingHandlerMapping'
+2026-02-13 16:05:33.211 DEBUG 133296 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-13 16:05:33.227 DEBUG 133296 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-13 16:05:33.323  INFO 133296 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2026-02-13 16:05:33.340  INFO 133296 --- [           main] f.frontend.FrontendApplication           : Started FrontendApplication in 5.928 seconds (JVM running for 6.578)
+2026-02-13 16:05:38.145  INFO 133296 --- [nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-13 16:05:38.145  INFO 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-13 16:05:38.145 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-02-13 16:05:38.145 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-02-13 16:05:38.145 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2026-02-13 16:05:38.146 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@28bc00e7
+2026-02-13 16:05:38.148 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7092f13f
+2026-02-13 16:05:38.148 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-02-13 16:05:38.148  INFO 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-02-13 16:05:38.163 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/reservations", parameters={}
+2026-02-13 16:05:38.173 DEBUG 133296 --- [nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to frontOffice.frontend.controller.ReservationController#listReservations(LocalDate, Model)
+2026-02-13 16:05:38.265 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8080/api/reservations
+2026-02-13 16:05:38.393 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2026-02-13 16:05:38.496 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2026-02-13 16:05:38.505 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.client.RestTemplate              : Reading to [frontOffice.frontend.service.ReservationService$ApiResponse]
+2026-02-13 16:05:38.619 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.view.JstlView            : View name 'reservations', model {reservations=[ReservationDTO{id=1, idclient='FB-1242', nomHotel='Hôtel Paradis', nbPassager=4, dateArrivee='05/02/2026', heureArrivee='16:22'}, ReservationDTO{id=2, idclient='FB-1243', nomHotel='Hôtel des Rives', nbPassager=6, dateArrivee='08/02/2026', heureArrivee='17:13'}, ReservationDTO{id=3, idclient='FB-1243', nomHotel='Hôtel du Soleil', nbPassager=4, dateArrivee='08/02/2026', heureArrivee='13:42'}, ReservationDTO{id=4, idclient='FB-1245', nomHotel='Hôtel Paradis', nbPassager=3, dateArrivee='06/02/2026', heureArrivee='13:43'}, ReservationDTO{id=5, idclient='FB-1243', nomHotel='Hôtel Paradis', nbPassager=6, dateArrivee='11/02/2026', heureArrivee='15:05'}, ReservationDTO{id=6, idclient='FB-1246', nomHotel='Hôtel Paradis', nbPassager=5, dateArrivee='09/02/2026', heureArrivee='15:16'}, ReservationDTO{id=7, idclient='FB-1246', nomHotel='Hôtel Paradis', nbPassager=5, dateArrivee='09/02/2026', heureArrivee='15:16'}], dateFilter=null}
+2026-02-13 16:05:38.630 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.view.JstlView            : Forwarding to [/WEB-INF/jsp/reservations.jsp]
+2026-02-13 16:05:40.617 DEBUG 133296 --- [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-13 16:05:40.685 DEBUG 133296 --- [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-02-13 16:05:40.696 DEBUG 133296 --- [nio-8085-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-13 16:05:40.700 DEBUG 133296 --- [nio-8085-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2026-02-13 16:05:40.701 DEBUG 133296 --- [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-02-13 16:05:40.702 DEBUG 133296 --- [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2026-02-13 16:05:40.707 DEBUG 133296 --- [nio-8085-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-02-13 16:05:40.728 DEBUG 133296 --- [nio-8085-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-02-13 16:05:40.735 DEBUG 133296 --- [nio-8085-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Feb 13 16:05:40 EAT 2026, status=404, error=Not Found, message=No message available,  (truncated)...]
+2026-02-13 16:05:40.794 DEBUG 133296 --- [nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
