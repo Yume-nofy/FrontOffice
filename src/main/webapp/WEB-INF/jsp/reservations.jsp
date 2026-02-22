@@ -36,9 +36,10 @@
                         <tr>
                             <th>ID</th>
                             <th>Client ID</th>
-                            <th>Hôtel ID</th>
+                            <th>Hôtel</th>
                             <th>Nb. Passagers</th>
                             <th>Date d'Arrivée</th>
+                            <th>Heure d'Arrivée</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,11 +47,16 @@
                             <tr>
                                 <td><span class="badge badge-info">#${reservation.id}</span></td>
                                 <td>${reservation.idclient}</td>
-                                <td>${reservation.idhotel}</td>
+                                <td>${reservation.nomHotel}</td>
                                 <td><strong>${reservation.nbPassager}</strong> personne<c:if test="${reservation.nbPassager > 1}">s</c:if></td>
                                 <td>
                                     <span class="date-info">
-                                        <fmt:formatDate value="${reservation.dateArrivee}" pattern="dd/MM/yyyy HH:mm"/>
+                                        ${reservation.dateArrivee}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="date-info">
+                                        ${reservation.heureArrivee}
                                     </span>
                                 </td>
                             </tr>
