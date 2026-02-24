@@ -17,7 +17,7 @@ public class ConfigStorageService {
     // Le chemin est correct par rapport à la racine montrée dans tree
     private final String FILE_PATH = "base.conf"; 
     private final String TOKEN_KEY = "token=";
-    private final String API_URL = "http://localhost:8080/api/token?id=1";
+    private final String API_URL = "http://localhost:8080/api/token?id=2";
 
     public void fetchAndSaveToken() {
     try {

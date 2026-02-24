@@ -28,15 +28,20 @@
         this.restTemplate = restTemplate;
     }
         // Classe pour mapper la réponse JSON de l'API des réservations
-        public static class ApiResponse {
-            public int code;
-            public List<ReservationAPI> data;
-            public int count;
-            public String message;
-            public String status;
-        }
+// 1. La réponse globale
+   public static class ApiResponse {
+    public int code;
+    public DataWrapper data; // L'objet "data" extérieur
+    public int count;
+    public String message;
+    public String status;
+}
 
-        // Classe pour mapper les données de réservation de l'API
+public static class DataWrapper {
+    // Dans ton JSON, la liste est dans un champ qui s'appelle aussi "data"
+    @JsonProperty("data") 
+    public List<ReservationAPI> reservationsList; 
+}     // Classe pour mapper les données de réservation de l'API
         public static class ReservationAPI {
             public int id;
             @JsonProperty("idClient")
@@ -81,32 +86,29 @@
             }
         }
 
-  public List<Reservation> getAllReservations() {
+public List<Reservation> getAllReservations() {
     try {
-        // 1. Récupérer le token depuis base.conf
         String token = configStorageService.getTokenFromFile();
-        if (token == null || token.isEmpty()) {
-            System.err.println("⚠️ Token absent. Tentative de récupération forcée...");
-            configStorageService.fetchAndSaveToken();
-            token = configStorageService.getTokenFromFile();
-        }
-
-        // 2. Construire l'URL avec le paramètre token
         String urlWithToken = API_URL + "?token=" + token;
 
-        // 3. Appel de l'API (version simplifiée car le token est dans l'URL)
         ApiResponse response = restTemplate.getForObject(urlWithToken, ApiResponse.class);
         
-        if (response != null && response.data != null) {
+        // On vérifie : response -> data -> reservationsList
+        if (response != null && response.data != null && response.data.reservationsList != null) {
             List<Reservation> reservations = new ArrayList<>();
-            for (ReservationAPI apiRes : response.data) {
+            
+            for (ReservationAPI apiRes : response.data.reservationsList) {
                 reservations.add(apiRes.toReservation());
             }
+            
+            System.out.println("✅ Succès ! " + reservations.size() + " réservations récupérées.");
             return reservations;
+        } else {
+            System.err.println("⚠️ Structure non reconnue. Vérification du JSON brut...");
         }
-        return List.of();
     } catch (Exception e) {
-        System.err.println("❌ Erreur API (getAllReservations): " + e.getMessage());
-        return List.of();
+        System.err.println("❌ Erreur : " + e.getMessage());
     }
-}  }
+    return List.of();
+}
+      }
