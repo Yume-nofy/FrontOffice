@@ -5,16 +5,19 @@ import frontOffice.frontend.dto.ReservationDTO;
 import frontOffice.frontend.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
@@ -80,5 +83,39 @@ public class ReservationController {
             Model model) {
 
         return listReservations(dateFilter, model);
+    }
+
+    @GetMapping("/assignation-vehicules")
+    public String afficherAssignationVehicules(
+            @RequestParam(name = "dateDebut", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateDebut,
+            @RequestParam(name = "dateFin", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateFin,
+            Model model) {
+        
+        try {
+            String apiUrl = "http://localhost:8080/api/assignationVehicule";
+            
+            if (dateDebut != null && dateFin != null) {
+                apiUrl += "?dateDebut=" + dateDebut + "&dateFin=" + dateFin;
+            }
+            
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<Map> response = restTemplate.getForEntity(apiUrl, Map.class);
+            
+            Map<String, Object> responseBody = response.getBody();
+            
+            if (responseBody != null && responseBody.containsKey("data")) {
+                Map<String, Object> data = (Map<String, Object>) responseBody.get("data");
+                model.addAttribute("vehicules", data.get("vehicules"));
+                model.addAttribute("reservationsSansVehicule", data.get("reservationsSansVehicule"));
+            }
+            
+            model.addAttribute("dateDebut", dateDebut);
+            model.addAttribute("dateFin", dateFin);
+            
+        } catch (Exception e) {
+            model.addAttribute("error", "Erreur lors de la récupération des données: " + e.getMessage());
+        }
+        
+        return "assignation-vehicules";
     }
 }
