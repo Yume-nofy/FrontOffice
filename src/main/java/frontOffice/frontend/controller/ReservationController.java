@@ -92,11 +92,14 @@ public class ReservationController {
             Model model) {
         
         try {
-            String apiUrl = "http://localhost:8080/api/assignationVehicule";
-            
-            if (dateDebut != null && dateFin != null) {
-                apiUrl += "?dateDebut=" + dateDebut + "&dateFin=" + dateFin;
+            if (dateDebut == null) {
+                dateDebut = LocalDate.parse("2024-01-15");
             }
+            if (dateFin == null) {
+                dateFin = LocalDate.parse("2024-01-15");
+            }
+            
+            String apiUrl = "http://localhost:8080/api/assignationVehicule?dateDebut=" + dateDebut + "&dateFin=" + dateFin;
             
             RestTemplate restTemplate = new RestTemplate();
             ResponseEntity<Map> response = restTemplate.getForEntity(apiUrl, Map.class);
