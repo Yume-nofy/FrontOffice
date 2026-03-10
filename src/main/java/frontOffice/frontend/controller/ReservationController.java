@@ -64,26 +64,23 @@ public class ReservationController {
         }
 
         model.addAttribute("reservations", reservationDTOs);
+        model.addAttribute("p", "Accueil");
         model.addAttribute("dateFilter", dateFilter);
 
-        return "reservations";
+        return "index";
     }
 
     @PostMapping("/reservations/filter")
     public String filterReservations(
             @RequestParam(name = "dateFilter", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateFilter,
             Model model) {
-
+                if(model.containsAttribute("p")){
+                    model.addAttribute("p", "Accueil");
+                }
         return listReservations(dateFilter, model);
     }
 
-    @GetMapping("/reservations/filter")
-    public String filterReservationsGet(
-            @RequestParam(name = "dateFilter", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateFilter,
-            Model model) {
-
-        return listReservations(dateFilter, model);
-    }
+    
 
     @GetMapping("/assignation-vehicules")
     public String afficherAssignationVehicules(
@@ -114,11 +111,11 @@ public class ReservationController {
             
             model.addAttribute("dateDebut", dateDebut);
             model.addAttribute("dateFin", dateFin);
-            
+            model.addAttribute("p", "Assignation");
+                           
         } catch (Exception e) {
             model.addAttribute("error", "Erreur lors de la récupération des données: " + e.getMessage());
         }
-        
-        return "assignation-vehicules";
+        return "index";
     }
 }
