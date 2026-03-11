@@ -107,6 +107,7 @@ public class ReservationController {
                 Map<String, Object> data = (Map<String, Object>) responseBody.get("data");
                 model.addAttribute("vehicules", data.get("vehicules"));
                 model.addAttribute("reservationsSansVehicule", data.get("reservationsSansVehicule"));
+            model.addAttribute("p", "Assignation");
             }
             
             model.addAttribute("dateDebut", dateDebut);

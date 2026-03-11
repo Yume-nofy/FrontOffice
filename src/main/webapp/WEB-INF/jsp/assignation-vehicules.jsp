@@ -108,6 +108,10 @@
                 <label for="dateDebut" class="form-label mb-0">Date Début</label>
                 <input type="date" class="form-control form-control-sm" id="dateDebut" name="dateDebut" value="${dateDebut}">
             </div>
+            <div class="d-flex flex-column">
+                <label for="dateFin" class="form-label mb-0">Date Fin</label>
+                <input type="date" class="form-control form-control-sm" id="dateFin" name="dateFin" value="${dateFin}">
+            </div>
             
             <button type="submit" class="btn btn-primary btn-sm">
                 <i class="bi bi-search"></i> Filtrer
