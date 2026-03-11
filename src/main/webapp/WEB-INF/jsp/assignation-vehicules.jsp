@@ -181,16 +181,20 @@
                                 <th>Hôtel</th>
                                 <th>Passagers</th>
                                 <th>Date d'arrivée</th>
+                                <th>Date de passage</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="reservation" items="${vehicule.reservationsAssign}">
+                            <c:forEach var="reservation" items="${vehicule.reservationsAssign}" varStatus="status">
                                 <tr>
                                     <td>#${reservation.id}</td>
                                     <td>${reservation.idClient}</td>
                                     <td>${reservation.nomHotel}</td>
                                     <td>${reservation.nbPassager}</td>
                                     <td>${fn:replace(reservation.dateArrivee,'T',' ')}</td>
+                                    <td>
+                                        ${fn:replace(vehicule.retourListDate[status.index],'T',' ')}
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>
