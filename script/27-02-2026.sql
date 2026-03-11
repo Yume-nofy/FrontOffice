@@ -21,3 +21,6 @@ INSERT INTO public.reservation (idclient, idhotel, nb_passager, date_arrivee) VA
 ('CL009', 1, 2, '2024-01-15 15:00:00'), -- Colbert, 2 pers
 ('CL010', 1, 3, '2024-01-15 15:10:00'), -- Colbert, 3 pers (total = 5 pers)
 ('CL011', 2, 1, '2024-01-15 15:20:00'); -- Novotel, 1 pers (total final = 6 pers, dépasse)
+
+
+ update reservation set date_arrivee='2024-01-15 08:20:00' where id=3;
