@@ -157,8 +157,19 @@
                         </div>
                         <div>
                             <span class="badge badge-carburant ${vehicule.typeCarburant == 'El' ? 'bg-success' : 'bg-warning'}">
-                                <i class="bi ${vehicule.typeCarburant == 'El' ? 'bi-lightning' : 'bi-fuel-pump'}"></i>
-                                ${vehicule.typeCarburant == 'El' ? 'Électrique' : 'Diesel'}
+                                <i class="bi ${
+    vehicule.typeCarburant == 'El' ? 'bi-lightning' :
+    vehicule.typeCarburant == 'Es' ? 'bi-fuel-pump' :
+    vehicule.typeCarburant == 'D' ? 'bi-truck' :
+    'bi-question-circle'
+}"></i>
+
+${
+    vehicule.typeCarburant == 'El' ? 'Électrique' :
+    vehicule.typeCarburant == 'Es' ? 'Essence' :
+    vehicule.typeCarburant == 'D' ? 'Diesel' :
+    'Inconnu'
+}
                             </span>
                             <span class="badge bg-info ms-2">
                                 <i class="bi bi-people"></i> ${vehicule.nbrPlace} places
