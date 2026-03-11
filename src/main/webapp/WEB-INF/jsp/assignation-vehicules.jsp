@@ -193,8 +193,8 @@
                                     <td>${reservation.nbPassager}</td>
                                     <td>${fn:replace(reservation.dateArrivee,'T',' ')}</td>
                                     <td>
-                                        ${fn:replace(vehicule.retourListDate[status.index],'T',' ')}
-                                    </td>
+                                        ${fn:substring(vehicule.retourListDate[status.index],11,19)}
+                                    </td>   
                                 </tr>
                             </c:forEach>
                         </tbody>
