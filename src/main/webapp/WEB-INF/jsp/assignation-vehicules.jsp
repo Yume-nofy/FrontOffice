@@ -162,7 +162,7 @@
                                 <i class="bi bi-truck-front"></i> <strong>${vehicule.reference}</strong>
                                 <span class="badge bg-secondary ms-2">ID: ${vehicule.id}</span>
                             </div>
-                            <div style=">
+                            <div style="display: contents;">
                                 <span>Heure depart: ${fn:substring(vehicule.dateDepart,11,19)}</span>
                                 <span>Heure retour: ${fn:substring(vehicule.dateRetour,11,19)}</span>
                                 <span>kilometrage Parcouru : ${vehicule.distanceTotal}</span>
